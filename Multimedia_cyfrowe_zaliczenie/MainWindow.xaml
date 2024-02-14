@@ -1,0 +1,84 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Multimedia_cyfrowe_zaliczenie"
+        xmlns:oxy="http://oxyplot.org/wpf" x:Class="Multimedia_cyfrowe_zaliczenie.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1200">
+    <Grid Background="Gray" Margin="0,0,0,-6">
+        <Label Content="Ilość punktów" HorizontalAlignment="Left" Margin="68,20,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="68,70,0,0" TextWrapping="Wrap" Text="128" VerticalAlignment="Top" Width="120" PreviewTextInput="TextBox_IntegerOnly" Name="numberOfPointsTextInput"/>
+        <Label Content="Wartosc minimalna" HorizontalAlignment="Left" Margin="231,20,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="231,70,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" PreviewTextInput="TextBox_DoubleOnly" Name="minimalValueTextInput"/>
+        <Label Content="Wartosc maksymalna" HorizontalAlignment="Left" Margin="384,20,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="384,70,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="120" PreviewTextInput="TextBox_DoubleOnly" Name="maximalValueTextInput"/>
+        <CheckBox Content="*PI" HorizontalAlignment="Left" Margin="534,70,0,0" VerticalAlignment="Top" IsChecked="True" Name="multiplyByPiCheckBox"/>
+
+        <Label Content="Sygnał 1" HorizontalAlignment="Left" Margin="68,110,0,0" VerticalAlignment="Top"/>
+        <Label Content="Rodzaj sygnału" HorizontalAlignment="Left" Margin="68,160,0,0" VerticalAlignment="Top"/>
+        <Label Content="Częstotoliwość" HorizontalAlignment="Left" Margin="231,160,0,0" VerticalAlignment="Top"/>
+        <Label Content="Amplituda" HorizontalAlignment="Left" Margin="384,160,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.653,0.071"/>
+        <Label Content="Faza" HorizontalAlignment="Left" Margin="534,160,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.653,0.071"/>
+        <ComboBox HorizontalAlignment="Left" Margin="68,201,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" Name="firstSignalTypeDropDown" >
+            <ComboBoxItem Content="SINUS"/>
+            <ComboBoxItem Content="SQUARE"/>
+            <ComboBoxItem Content="SAWTOOTH"/>
+            <ComboBoxItem Content="NONE"/>
+        </ComboBox>
+        <TextBox HorizontalAlignment="Left" Margin="231,201,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="80" Height="20" PreviewTextInput="TextBox_DoubleOnly" Name="firstSignalFrequencyTextInput"/>
+        <TextBox HorizontalAlignment="Left" Margin="384,203,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="80" Height="20" PreviewTextInput="TextBox_DoubleOnly" Name="firstSignalAmplitudeTextInput"/>
+        <TextBox HorizontalAlignment="Left" Margin="534,203,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" Height="20" PreviewTextInput="TextBox_DoubleOnly" Name="firstSignalPhaseTextInput"/>
+
+        <Label Content="Sygnał 2" HorizontalAlignment="Left" Margin="68,260,0,0" VerticalAlignment="Top"/>
+        <Label Content="Rodzaj sygnału" HorizontalAlignment="Left" Margin="68,310,0,0" VerticalAlignment="Top"/>
+        <Label Content="Częstotoliwość" HorizontalAlignment="Left" Margin="231,310,0,0" VerticalAlignment="Top"/>
+        <Label Content="Amplituda" HorizontalAlignment="Left" Margin="384,310,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.653,0.071"/>
+        <Label Content="Faza" HorizontalAlignment="Left" Margin="534,310,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.653,0.071"/>
+        <ComboBox HorizontalAlignment="Left" Margin="68,350,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" Name="secondSignalTypeDropDown" >
+            <ComboBoxItem Content="SINUS"/>
+            <ComboBoxItem Content="SQUARE"/>
+            <ComboBoxItem Content="SAWTOOTH"/>
+            <ComboBoxItem Content="NONE"/>
+        </ComboBox>
+        <TextBox HorizontalAlignment="Left" Margin="231,350,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="80" Height="20" PreviewTextInput="TextBox_DoubleOnly" Name="secondSignalFrequencyTextInput"/>
+        <TextBox HorizontalAlignment="Left" Margin="384,350,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="80" Height="20" PreviewTextInput="TextBox_DoubleOnly" Name="secondSignalAmplitudeTextInput"/>
+        <TextBox HorizontalAlignment="Left" Margin="534,350,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" Height="20" PreviewTextInput="TextBox_DoubleOnly" Name="secondSignalPhaseTextInput"/>
+
+        <Label Content="Sygnał 3" HorizontalAlignment="Left" Margin="68,410,0,0" VerticalAlignment="Top"/>
+        <Label Content="Rodzaj sygnału" HorizontalAlignment="Left" Margin="68,460,0,0" VerticalAlignment="Top"/>
+        <Label Content="Częstotoliwość" HorizontalAlignment="Left" Margin="231,460,0,0" VerticalAlignment="Top"/>
+        <Label Content="Amplituda" HorizontalAlignment="Left" Margin="384,460,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.653,0.071"/>
+        <Label Content="Faza" HorizontalAlignment="Left" Margin="534,460,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.653,0.071"/>
+        <ComboBox HorizontalAlignment="Left" Margin="68,500,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" Name="thirdSignalTypeDropDown" >
+            <ComboBoxItem Content="SINUS"/>
+            <ComboBoxItem Content="SQUARE"/>
+            <ComboBoxItem Content="SAWTOOTH"/>
+            <ComboBoxItem Content="NONE"/>
+        </ComboBox>
+        <TextBox HorizontalAlignment="Left" Margin="231,500,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="80" Height="20" PreviewTextInput="TextBox_DoubleOnly" Name="thirdSignalFrequencyTextInput"/>
+        <TextBox HorizontalAlignment="Left" Margin="384,500,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="80" Height="20" PreviewTextInput="TextBox_DoubleOnly" Name="thirdSignalAmplitudeTextInput"/>
+        <TextBox HorizontalAlignment="Left" Margin="534,500,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" Height="20" PreviewTextInput="TextBox_DoubleOnly" Name="thirdSignalPhaseTextInput"/>
+
+        <CheckBox Content="Szumy" HorizontalAlignment="Left" Margin="74,578,0,0" VerticalAlignment="Top" Name="noiseCheckBox"/>
+        <CheckBox Content="Transformata Fouriera" HorizontalAlignment="Left" Margin="200,578,0,0" VerticalAlignment="Top" Name="fourierCheckBox"/>
+
+
+        <Label Content="Ilość punktów transformaty" HorizontalAlignment="Left" Margin="384,572,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="393,612,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="120" PreviewTextInput="TextBox_IntegerOnly" Name="numberOfPointsFFTTextInput"/>
+
+        <CheckBox Content="okno" HorizontalAlignment="Left" Margin="76,645,0,0" VerticalAlignment="Top" Name="windowCheckBox"/>
+        <Label Content="Rodzaj:" HorizontalAlignment="Left" Margin="196,640,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="200,666,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" Name="windowTypeDropDown">
+            <ComboBoxItem Content="BLACKMAN"/>
+            <ComboBoxItem Content="HANNIMG"/>
+            <ComboBoxItem Content="HAMMING"/>
+            <ComboBoxItem Content="BARTLET"/>
+        </ComboBox>
+        <!--<Button Content="Rysuj" HorizontalAlignment="Left" Margin="854,579,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.058,-0.108" Height="26" Width="80" Name="drawButton" Click="drawButton_Click"/>!-->
+        <Button Content="Rysuj" FontSize="20" HorizontalAlignment="Left" Margin="814,578,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.058,-0.108" Height="52" Width="160" Name="drawButton" Click="drawButton_Click"/>
+        <oxy:PlotView x:Name="plotView" HorizontalAlignment="Left" Margin="658,86,0,0" VerticalAlignment="Top" Width="471" Height="410"/>
+    </Grid>
+</Window>
+
